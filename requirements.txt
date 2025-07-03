@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+opencv-python-headless  # Use headless unless you need GUI features on the server
+numpy
+python-dotenv        # To load .env file
+Jinja2               # For HTML templating
+python-multipart     # Often needed by FastAPI for forms/files
+aiofiles             # For serving static files asynchronously

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synced Image Viewer (Client-Side)</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+</head>
+<body>
+    <div class="controls">
+        <button id="prev-set-btn" title="Previous Set (A)" disabled>&lt;</button>
+        <span id="set-info">Set: Loading...</span>
+        <button id="next-set-btn" title="Next Set (D)" disabled>&gt;</button>
+        <span class="zoom-info">Zoom: Use Mouse Wheel or Q/E keys</span>
+        <span id="loading-indicator" style="display: none; color: red; margin-left: 20px;">Loading Set...</span>
+    </div>
+
+    <div id="grid-container">
+        <div class="grid-cell">
+            <canvas id="canvas-tl" width="{{ quadrant_w }}" height="{{ quadrant_h }}"></canvas>
+        </div>
+        <div class="grid-cell">
+            <canvas id="canvas-tr" width="{{ quadrant_w }}" height="{{ quadrant_h }}"></canvas>
+        </div>
+        <div class="grid-cell">
+            <canvas id="canvas-bl" width="{{ quadrant_w }}" height="{{ quadrant_h }}"></canvas>
+        </div>
+        <div class="grid-cell">
+            <canvas id="canvas-br" width="{{ quadrant_w }}" height="{{ quadrant_h }}"></canvas>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', path='/script.js') }}"></script>
+</body>
+</html>

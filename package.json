@@ -1,0 +1,12 @@
+{
+  "name": "image-viewer-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for FastAPI Image Viewer",
+  "main": "static/script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

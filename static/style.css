@@ -1,0 +1,69 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden; /* Prevent body scroll */
+    background-color: #f0f0f0;
+}
+
+.controls {
+    padding: 10px;
+    background-color: #ddd;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    flex-shrink: 0; /* Prevent controls from shrinking */
+}
+
+.controls button {
+    padding: 5px 10px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.controls span {
+    margin: 0 15px;
+    display: inline-block; /* Allows margin */
+}
+
+#grid-container {
+    display: grid;
+    flex-grow: 1;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    background-color: #aaa;
+    cursor: grab;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #aaa;
+}
+
+#grid-container.dragging {
+    cursor: grabbing;
+}
+
+.grid-cell {
+    background-color: #fff;
+    overflow: hidden;
+    display: flex; /* Helps if canvas size < cell size */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 1px solid #ccc;
+}
+
+/* Style the canvas element */
+.grid-cell canvas {
+    display: block;
+    /* Width/Height attributes set resolution. CSS width/height scale it.*/
+    /* Let CSS ensure it fits the cell if grid layout causes resizing */
+    max-width: 100%;
+    max-height: 100%;
+    /* This applies if the *canvas itself* is scaled by CSS */
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
